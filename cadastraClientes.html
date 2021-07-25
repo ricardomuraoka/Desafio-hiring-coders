@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Estoque - Cadastro de novos produtos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/funcoes.js"></script>
+</head>
+
+<body onload="carregarTotalClientes('totalClientes')">
+    <div class="soma">
+        <img src="img/gama.jpg">
+        <p>Clientes: <span id="totalClientes">0</span></p>
+    </div>
+    
+    <form>
+        <table>
+            <caption>Cadastro de novos clientes</caption>
+            <tr>
+                <td class="align">Nome</td>
+                <td><input id="nomeClientes" type="text"></td>
+            </tr>
+            <tr>
+                <td class="align">E-mail</td>
+                <td><input id="mailClientes" type="text"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" value="Cadastrar" class="btn" onclick="validarClientes('nomeClientes','mailClientes')">
+                    <input type="button" value="Ver Clientes" class="btn" onclick="window.open('verClientes.html','_self')">
+                    <input type="reset" value="Limpar" class="btn">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"></td>
+                <a href="/index.html" class="button">Voltar</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
