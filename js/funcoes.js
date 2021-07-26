@@ -83,6 +83,25 @@ function carregarTotalClientes(idCamp) {
 }
 
 
+function listarClientes() {
+    if (typeof(Storage) !== "undefined") {
+        let clientes = localStorage.getItem("clientes");
+        document.write("<h1>Clientes:</h1>")
+        if (clientes == null)
+            document.write("<h3>Ainda não há clientes cadastrados</h3>");
+        else {
+            clientes = JSON.parse(clientes);
+            clientes.forEach(clientes => {
+                document.write("<ul>");
+                document.write("<li>Nome do cliente: "+clientes.nome+"</li>");
+                document.write("<li>E-mail do cliente: "+clientes.email+"</li>");
+                document.write("</ul>");
+            });
+        }
+    } 
+    else alert("Atualize seu navegador");    
+}
+
 function listarEstoque() {
     if (typeof(Storage) !== "undefined") {
         let produtos = localStorage.getItem("produtos");
@@ -95,6 +114,7 @@ function listarEstoque() {
                 document.write("<ul>");
                 document.write("<li>Nome do produto: "+produto.nome+"</li>");
                 document.write("<li>Código do produto: "+produto.codigo+"</li>");
+                document.write("<li>Quantidade no estoque: "+produto.quantidade+"</li>");
                 document.write("</ul>");
             });
         }
